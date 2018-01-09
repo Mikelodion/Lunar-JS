@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<title>Lunar Lander</title>
+ 		<meta charset="utf-8">
+ 		<meta name="description" content="Juego Lunar Lander hecho a base de html, css y JavaScript">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 		<link rel='stylesheet' media='screen and (min-width: 961px)' href='css/d.css'>
+ 		<link rel='stylesheet' media='screen and (max-width: 960px)' href='css/m.css'>
+ 		<script src="js/js.js"></script>
+	</head>
+
+	<body>
+ 	<div id="nave">
+ 		<img src="Img/Cohete.png" alt="img nave">
+ 	</div>
+ 	<div class="a">
+ 		<div id="showm">show menu</div>
+ 			<ul id="cpanel">
+  				<li>Velocidad <span id="velocidad">100</span> m/s</li>
+  				<li>Fuel <span id="fuel">100</span>%</li>
+  				<li>Altura <span id="altura">70</span> m</li>
+ 			</ul>
+ 		</div>
+ 		<div class="b">	
+ 			<div id="menu"> <h3>Menú de opciones</h3>
+ 			<h6>Dificultad</h6>
+			<button class="button">Facil</button>
+			<button class="button">Normal</button>
+			<button class="button">Dificil</button>
+			<button id="return"><img src="Img/Return.png" alt="Imagen Return"></button>
+			<div id="imginf"> <a href="Info.html"><img src="Img/Informacion.png" alt="Imagen Informacion"></a></div>
+		</div>
+ 		<div class="c">
+ 			<div id="engranaje"><img src="Img/Engranaje.png" alt="Opciones"></div>
+ 		</div>
+		<div class="d"><img src="Img/Luna.png" alt="Imagen Luna" id="luna"></div>
+	</body>
+</html>
