@@ -29,10 +29,10 @@ window.onload = function(){
 		stop();
 	}
 	//ocultar menú móvil
-	/*document.getElementById("hidem").onclick = function () {
-		document.getElementsByClassName("c")[0].style.display = "none";
+	document.getElementById("return").onclick = function () {
+		document.getElementById("menu").style.display = "none";
 		start();
-	}*/
+	}
 	//encender/apagar al apretar/soltar una tecla
 	document.onkeydown = motorOn;
 	document.onkeyup = motorOff;
@@ -61,7 +61,8 @@ function moverNave(){
 	
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
-		document.getElementById("nave").style.top = y+"%"; 
+		document.getElementById("nave").style.top = y+"%";
+		document.getElementById("nave1").style.top = y+"%";  
 	} else { 
 		stop();
 	}
@@ -69,12 +70,17 @@ function moverNave(){
 function motorOn(){
 	//el motor da aceleración a la nave
 	a=-g;
+	document.getElementById("nave").style.display= "none";
+	document.getElementById("nave1").style.display="inline-block";
 	//mientras el motor esté activado gasta combustible
 	if (timerFuel==null)
-	timerFuel=setInterval(function(){ actualizarFuel(); }, 10);	
+	timerFuel=setInterval(function(){ actualizarFuel(); }, 10);
+
 }
 function motorOff(){
 	a=g;
+	document.getElementById("nave").style.display= "inline-block";
+	document.getElementById("nave1").style.display="none";
 	clearInterval(timerFuel);
 	timerFuel=null;
 }
