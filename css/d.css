@@ -230,6 +230,7 @@ p{
   	transform: translateY(4px);
 }
 li{
+  margin-top: 10%;
   font-size:80%;
   list-style: none;
 }
