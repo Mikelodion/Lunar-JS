@@ -15,9 +15,13 @@ var altur= null;
 var combustible = null;
 var menuActivo = true;
 //Dificultad
-var facil = false;
+var facil = true;
 var normal=false;
 var dificil=false;
+//Avisos
+var vfinal = null;
+var vllegada=null;
+
 
 //al cargar por completo la página...
 window.onload = function(){
@@ -41,22 +45,27 @@ window.onload = function(){
 		start();
 	}
 	//CAmbiar dificultad
+		cambiarDificultad();
+
 		document.getElementsByClassName("button")[0].onclick = function () {
 			facil=true;
 			normal=false;
 			dificil=false;
+			vllegada=8;
 			cambiarDificultad();
 		}
 		document.getElementsByClassName("button")[1].onclick = function () {
 			facil=false;
 			normal=true;
 			dificil=false;
+			vllegada=5;
 			cambiarDificultad();
 		}
 		document.getElementsByClassName("button")[2].onclick = function () {
 			facil=false;
 			normal=false;
 			dificil=true;
+			vllegada=2;
 			cambiarDificultad();
 		}
 
@@ -73,7 +82,8 @@ window.onload = function(){
 	
 	document.onkeydown = motorOn;
 	document.onkeyup = motorOff;
-	//Empezar a mover la nave justo después de cargar la página
+	//Aviso final
+	avisarFinal();
 	
 }
 
@@ -99,6 +109,7 @@ function moverNave(){
 		velocidad.innerHTML=v.toFixed(2);
 		}
 		if (altur<0) {
+			vfinal=v;
 			v=0;
 			velocidad.innerHTML=v.toFixed(2);
 			altura.innerHTML=-altur.toFixed(0);
@@ -147,14 +158,47 @@ function actualizarFuel(){
 	combustible.innerHTML=c.toFixed(0);
 }
 function cambiarDificultad(){
-	
+	if (v==0) {
 	if (facil) {
 		c=100;
+		document.getElementsByClassName("button")[0].style.border="solid white";
+		document.getElementsByClassName("button")[0].style.boxShadow="none";
+		document.getElementsByClassName("button")[1].style.border="none";
+		document.getElementsByClassName("button")[1].style.boxShadow="0 5px #666";
+		document.getElementsByClassName("button")[2].style.border="none";
+		document.getElementsByClassName("button")[2].style.boxShadow="0 5px #666";
+		combustible.innerHTML=c.toFixed(0);
 	}
 	if (normal){
 		c=80;
+		document.getElementsByClassName("button")[1].style.border="solid white";
+		document.getElementsByClassName("button")[1].style.boxShadow="none";
+		document.getElementsByClassName("button")[0].style.border="none";
+		document.getElementsByClassName("button")[0].style.boxShadow="0 5px #666";
+		document.getElementsByClassName("button")[2].style.border="none";
+		document.getElementsByClassName("button")[2].style.boxShadow="0 5px #666";
+		combustible.innerHTML=c.toFixed(0);
 	}
 	if (dificil) {
 		c=60;
+		document.getElementsByClassName("button")[2].style.border="solid white";
+		document.getElementsByClassName("button")[2].style.boxShadow="none";
+		document.getElementsByClassName("button")[0].style.border="none";
+		document.getElementsByClassName("button")[0].style.boxShadow="0 5px #666";
+		document.getElementsByClassName("button")[1].style.border="none";
+		document.getElementsByClassName("button")[1].style.boxShadow="0 5px #666";
+		combustible.innerHTML=c.toFixed(0);
+	}
+}
+}
+
+function avisarFinal(){
+	if (y>70) {
+		if (vfinal<vllegada) {
+			
+		}
+		else{
+
+		}
 	}
 }
