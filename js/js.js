@@ -133,7 +133,8 @@ function moverNave(){
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
 		document.getElementById("nave").style.top = y+"%";
-		document.getElementById("nave1").style.top = y+"%";  
+		document.getElementById("nave1").style.top = y+"%";
+		document.getElementById("explo").style.top= (y-19)+"%";  
 	} else { 
 		stop();
 	}
@@ -205,11 +206,12 @@ function cambiarDificultad(){
 function avisarFinal(){
 	if (y>=70) {
 		if (vfinal<=vllegada) {
-			document.getElementById("avisoVictoria").style.display="block"
+			document.getElementById("avisoVictoria").style.display="block";
 		}
 		else{
-			document.getElementById("avisoDerrota").style.display="block"
-
+			document.getElementById("avisoDerrota").style.display="block";
+			document.getElementById("nave").style.display="none";
+			document.getElementById("explo").style.display="block";
 		}
 	}
 }
