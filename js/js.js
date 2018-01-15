@@ -20,7 +20,7 @@ var normal=false;
 var dificil=false;
 //Avisos
 var vfinal = null;
-var vllegada=null;
+var vllegada=8;
 
 
 //al cargar por completo la página...
@@ -84,6 +84,13 @@ window.onload = function(){
 	document.onkeyup = motorOff;
 	//Aviso final
 	avisarFinal();
+
+	document.getElementsByClassName("reiniciar")[1].onclick = function(){
+		window.open("html.html","_self");
+	}
+	document.getElementsByClassName("reiniciar")[0].onclick = function(){
+		window.open("html.html","_self");
+	}
 	
 }
 
@@ -107,8 +114,9 @@ function moverNave(){
 	if (altur<0 || v>0) {
 		if (v>0) {
 		velocidad.innerHTML=v.toFixed(2);
+		altura.innerHTML=altur.toFixed(0);
 		}
-		if (altur<0) {
+		if (altur<=0) {
 			vfinal=v;
 			v=0;
 			velocidad.innerHTML=v.toFixed(2);
@@ -129,6 +137,8 @@ function moverNave(){
 	} else { 
 		stop();
 	}
+
+	avisarFinal();
 }
 function motorOn(){
 	//el motor da aceleración a la nave
@@ -193,11 +203,12 @@ function cambiarDificultad(){
 }
 
 function avisarFinal(){
-	if (y>70) {
-		if (vfinal<vllegada) {
-			
+	if (y>=70) {
+		if (vfinal<=vllegada) {
+			document.getElementById("avisoVictoria").style.display="block"
 		}
 		else{
+			document.getElementById("avisoDerrota").style.display="block"
 
 		}
 	}

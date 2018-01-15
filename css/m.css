@@ -1,9 +1,238 @@
-body,html{height:100%;padding:0px;margin:0px;}
-.a{background-color:#00bcd4;width:100%;height:90px;overflow:hidden;position:fixed;top:0px}
-.b{background-color:red;width:100%;height:100%;overflow:hidden;}
-.c{background-color:#cddc39;position:fixed;top:0px;bottom:0px;left:0px;right:0px;display:none;z-index:1}
-.d{background-color:pink;position:fixed;bottom:0px;height:10%;width:100%;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
-#nave img{height:100%;}
-#cpanel{}
-#hidem,#showm{float:right}
+body,html{
+	height:100%;
+	padding:0px;
+	margin:0px;
+	background-image:url(../Img/Fondo.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;}
+
+body{
+	font-size:3vw}
+
+.a,.b,.c{
+	display:inline-block;
+	width:33.33%;
+	height:100%;
+	float:left;}
+
+.d{
+	height: 65%;
+    width: 117%;
+    position: fixed;
+    bottom: -47%;
+    left: -7%;}
+#nave{
+	z-index:2;
+	text-align: center;
+    position: fixed;
+    top: 14%;
+    width: 100%;
+    height: 20%;}
+
+#nave img{
+	height:100%;}
+#engranaje img{
+	position:absolute;
+	width:100%}
+
+#engranaje{
+	transition:all .4s ease-in-out;
+	top: 2%;
+    position: fixed;
+    width: 20%;
+    right: 13%;
+    max-width: 60px;}
+
+#luna {
+	position:absolute;
+	height:100%;
+	width:100%;}
+
+#sol{
+	right: -25%;
+    width: 55%;
+    position: fixed;
+    top: 30%;}
+
+#sol img{
+	position: absolute;
+	width:100%;}
+
+#engranaje:hover{
+	transform: scale(1.1);
+	cursor: pointer;}
+
+#menu{
+	z-index:4;
+	font-size: 22px;
+    left: 10%;
+    position: absolute;
+    z-index: 1;
+    background-color: grey;
+    border: solid 3px black;
+    width: 75%;
+    top: 3%;
+    text-align: center;
+    display: inline-block;}
+
+h3, h6{
+	margin-top: 1%;
+    text-shadow: 4px 4px 16px black;
+    margin-bottom: 3%;}
+
+h6{
+	font-size: 20px;
+	text-decoration: underline;
+	margin-top:0%;
+	margin-bottom:2%;}
+
+.button {
+	width: 37%;
+    margin: 3%;
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: hidden;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;}
+
+.button:hover {
+	background-color:black}
+
+.button:focus{
+	box-shadow: none;
+	border:solid white;}
+
+.button:active{
+  	background-color: black;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);}
+
+#return img{
+  width:100%}
+
+#return{
+  outline: none;
+  width: 20%;
+  position: relative;
+  background-color: grey;
+  border-radius: 50%;
+  padding: 3px 6px;
+  margin-top: 7%;
+  margin-right: 70%;
+  margin-bottom: 1%;}
+
+#return:hover{
+  cursor: pointer;}  
+
+#imginf{
+  border: inset;
+  width: 20%;
+  position:absolute;
+  bottom: 2%;
+  right: 5%;}
+
+#imginf img{
+  position:relative;
+  width:100%;}
+
+#imginf:hover{
+  border: inset black;
+  cursor: pointer;
+ transform: translateY(4px);}
+
+#return2{
+  outline: none;
+  width: 10%;
+  position: relative;
+  background-color: grey;
+  border-radius: 50%;
+  padding: 3px 6px;
+  margin-top: 1%;
+  margin-bottom: 3%;}
+
+#return2 img{
+  width:100%;}
+
+#info{
+  background-color: grey;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  border: dashed;}
+
+h5{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 1%;
+  margin-top: 2%;}
+
+p{
+  font-size: 12px;
+  text-align: justify;
+  margin-left: 1%;
+  margin-right: 1%;}
+
+#p1{
+	font-size: 12.5px;
+  	text-align:center;}
+#nave1{
+	text-align:center;
+	position:fixed;
+	top:10%;
+	width:100%;
+	height:21%;
+	display:none;
+	z-index: 2;}
+#nave1 img{
+	height:100%;}
+
+#avisoVictoria{ 
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: grey;
+    border: solid;
+    width: 30%;
+    top: 24%;
+    z-index: 5;
+    height: 20%;
+    font-size: 150%;
+}
+
+#avisoDerrota{
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: grey;
+    border: solid;
+    width: 30%;
+    top: 24%;
+    z-index: 5;
+    height: 20%;
+    font-size: 150%;
+}
+
+.reiniciar{
+    text-align: center;
+    font-size: 100%;
+    position: absolute;
+    top: 66%;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    left: 22%;
+}
+
+.reiniciar:active{
+	background-color: black;
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
